@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aakash Darda — Developer & Founder</title>
+<meta name="description" content="Portfolio of Aakash Darda. CSAI student at VIT Pune, department topper, founder of StudyPalz, and freelance full-stack developer.">
+<meta property="og:title" content="Aakash Darda | Developer & Founder">
+<meta property="og:description" content="Building real products, not just assignments. View my work, research, and projects.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://studypalz3.pythonanywhere.com/static/og-image.png"> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #1E4FA0;
+  --blue-deep: #163B7A;
+  --yellow: #F6C453;
+  --yellow-soft: #FDF1D2;
+  --white: #FFFFFF;
+  --paper: #FCFBF8;
+  --line: #E4E7EE;
+  --ink: #1B2333;
+  --ink-soft: #5B6473;
+  --ink-faint: #9AA2B1;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility Focus States */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 2.5rem; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700; font-size: 1.2rem;
+  color: var(--blue-deep); text-decoration: none; letter-spacing: -0.01em;
+  position: relative; z-index: 101;
+}
+.nav-logo span { background: var(--yellow); padding: 0.05rem 0.4rem; border-radius: 3px; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; align-items: center; }
+.nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--blue); }
+.nav-cta {
+  display: inline-flex; align-items: center;
+  font-size: 0.82rem; font-weight: 700;
+  color: var(--white) !important; background: var(--blue);
+  padding: 0.55rem 1.4rem; border-radius: 6px; text-decoration: none; transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--blue-deep); }
+
+/* Mobile Menu Toggle */
+.nav-mobile-toggle {
+  display: none; background: none; border: none; cursor: pointer; color: var(--ink);
+  position: relative; z-index: 101; padding: 0.5rem;
+}
+.nav-mobile-toggle svg { width: 24px; height: 24px; fill: currentColor; transition: transform 0.3s; }
+
+/* LAYOUT */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+section { padding: 5.5rem 0; }
+
+/* SECTION HEADING */
+.section-label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 0.9rem;
+}
+.section-label::before {
+  content: ''; display: block; width: 22px; height: 3px;
+  background: var(--yellow); border-radius: 2px;
+}
+.section-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  font-weight: 700; color: var(--ink);
+  line-height: 1.2; letter-spacing: -0.01em;
+  margin-bottom: 3rem; max-width: 620px;
+}
+
+/* HERO */
+.hero { background: var(--white); padding: 6.5rem 0 6rem; border-bottom: 1px solid var(--line); overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: center; }
+.hero-inner { max-width: 520px; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.78rem; font-weight: 600; color: var(--blue-deep);
+  background: var(--yellow-soft); border: 1px solid var(--yellow);
+  padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 1.75rem;
+}
+.hero-tag::before { content: ''; display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); }
+.hero h1 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(2.3rem, 5.2vw, 3.4rem); font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--blue); }
+.hero-sub { font-size: 1rem; color: var(--ink-soft); max-width: 480px; line-height: 1.75; margin-bottom: 2.25rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; background: var(--blue); color: var(--white); padding: 0.85rem 1.9rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+.btn-primary:hover { background: var(--blue-deep); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(30,79,160,0.15); }
+.btn-secondary { display: inline-flex; align-items: center; justify-content: center; background: var(--white); color: var(--ink); padding: 0.85rem 1.9rem; border-radius: 8px; border: 1px solid var(--line); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: border-color 0.2s, color 0.2s, transform 0.2s; }
+.btn-secondary:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+
+/* UX Animations: Floating Hero tickets */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(var(--rot)); }
+  50% { transform: translateY(-12px) rotate(var(--rot)); }
+  100% { transform: translateY(0px) rotate(var(--rot)); }
+}
+.hero-tickets { position: relative; height: 320px; }
+.ticket {
+  position: absolute; width: 190px;
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: 12px; padding: 1.1rem 1.25rem;
+  box-shadow: 0 10px 28px rgba(27,35,51,0.06);
+  /* Apply animation */
+  animation: float 6s ease-in-out infinite;
+}
+.ticket-num { font-family: 'Fraunces', Georgia, serif; font-size: 1.6rem; font-weight: 700; color: var(--blue); line-height: 1.1; margin-bottom: 0.25rem; }
+.ticket-label { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.4; }
+.ticket-1 { top: 0; right: 10%; --rot: -4deg; animation-duration: 5s; }
+.ticket-2 { top: 110px; left: 0; background: var(--yellow-soft); border-color: var(--yellow); --rot: 3deg; animation-duration: 7s; animation-direction: reverse; }
+.ticket-2 .ticket-num { color: var(--blue-deep); }
+.ticket-2 .ticket-label { color: #8A7233; }
+.ticket-3 { top: 225px; right: 4%; --rot: -2deg; animation-duration: 6.5s; animation-delay: 1s; }
+
+/* ABOUT */
+.about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 340px; gap: 5rem; align-items: start; }
+.about-text p { color: var(--ink-soft); font-size: 0.98rem; margin-bottom: 1.15rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1.75rem; }
+.chip { font-size: 0.78rem; font-weight: 600; padding: 0.35rem 0.85rem; border-radius: 100px; color: var(--blue-deep); background: var(--yellow-soft); border: 1px solid var(--yellow); transition: transform 0.2s; cursor: default; }
+.chip:hover { transform: scale(1.05); }
+
+/* Bento Grid */
+.about-sidebar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 0; }
+.sidebar-item { padding: 1.2rem 1.35rem; background: var(--white); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; justify-content: center; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+.sidebar-item:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(27,35,51,0.06); border-color: var(--blue); }
+.sidebar-item:nth-child(1) { grid-column: span 2; }
+.sidebar-item:nth-child(2) { grid-column: span 1; }
+.sidebar-item:nth-child(3) { grid-column: span 1; }
+.sidebar-item:nth-child(4) { grid-column: span 2; }
+.sidebar-item:nth-child(5) { grid-column: span 2; }
+.sidebar-item.accent { background: var(--yellow-soft); border-color: var(--yellow); }
+.sidebar-item.accent strong { color: var(--blue-deep); }
+.sidebar-item strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
+.sidebar-item span { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.6; }
+
+/* PROJECTS */
+.projects { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: center; }
+.project-card { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.2s, box-shadow 0.2s, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); height: 540px; }
+.project-card:hover { border-color: var(--blue); box-shadow: 0 16px 40px rgba(30,79,160,0.1); transform: translateY(-6px); }
+.project-card.featured { border-color: var(--blue); border-width: 2px; }
+
+.card-viewport { position: relative; overflow: hidden; flex: 1; display: flex; flex-direction: column; }
+.card-track { display: flex; flex: 1; height: 100%; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); align-items: stretch; }
+
+/* Scrollable Slides */
+.card-slide {
+  flex-shrink: 0; display: flex; flex-direction: column; height: 100%; overflow-y: auto; scroll-behavior: smooth;
+  scrollbar-width: thin; scrollbar-color: #CBD5E1 transparent;
+}
+.card-slide::-webkit-scrollbar { width: 5px; }
+.card-slide::-webkit-scrollbar-track { background: transparent; }
+.card-slide::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+.card-slide::-webkit-scrollbar-thumb:hover { background: var(--ink-faint); }
+
+.slide-1 { background: var(--white); }
+.project-img { width: 100%; aspect-ratio: 16/9; background: var(--yellow-soft); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; position: relative; overflow: hidden; flex-shrink: 0; }
+.project-card.featured .project-img { background: #E8F0FC; }
+.project-img img, .cert-frame img, .hackathon-img img, .patent-figure img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; opacity: 0; transition: opacity 0.5s; }
+.project-img img.loaded, .cert-frame img.loaded, .hackathon-img img.loaded, .patent-figure img.loaded { opacity: 1; }
+
+.img-placeholder { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; position: relative; z-index: 1; pointer-events: none; }
+.project-img img.loaded ~ .img-placeholder { display: none; }
+.project-img-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-deep); background: var(--white); padding: 0.35rem 0.8rem; border: 1px dashed var(--yellow); border-radius: 100px; }
+.project-img-url { font-size: 0.68rem; color: var(--ink-faint); }
+
+.project-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
+.project-type { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
+.project-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.6rem; line-height: 1.3; }
+.slide-1 p { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.65; margin-bottom: 1.2rem; }
+.project-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--line); margin-top: auto; }
+.project-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.tag { font-size: 0.68rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 100px; background: var(--yellow-soft); color: var(--blue-deep); }
+.project-link { font-size: 0.78rem; font-weight: 700; color: var(--blue); text-decoration: none; white-space: nowrap; margin-left: 0.75rem; }
+.project-link:hover { color: var(--blue-deep); }
+.featured-pill { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--blue); color: var(--white); padding: 0.22rem 0.6rem; border-radius: 100px; margin-left: 0.5rem; vertical-align: middle; }
+
+/* Detail slides */
+.detail-slide { background: var(--white); padding: 1.4rem; }
+.detail-slide .slide-heading { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+.detail-slide .slide-heading::before { content: ''; display: block; width: 16px; height: 2px; background: var(--yellow); border-radius: 2px; flex-shrink: 0; }
+.detail-slide h4 { font-family: 'Fraunces', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.35; }
+.detail-slide p { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 0.8rem; }
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1rem; }
+.feature-list li { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.5; display: flex; gap: 0.6rem; align-items: flex-start; }
+.feature-list li::before { content: ''; display: block; width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; margin-top: 0.45rem; flex-shrink: 0; }
+.stack-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.stack-chip { font-size: 0.72rem; font-weight: 600; padding: 0.28rem 0.7rem; border-radius: 6px; background: var(--paper); color: var(--blue-deep); border: 1px solid var(--line); }
+.stack-section { margin-bottom: 1rem; }
+.stack-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.4rem; }
+
+/* Slide nav */
+.slide-nav { display: flex; align-items: center; justify-content: space-between; padding: 0.8rem 1.2rem; border-top: 1px solid var(--line); background: var(--paper); flex-shrink: 0; }
+.slide-dots { display: flex; gap: 0.4rem; align-items: center; }
+.slide-dot { width: 8px; height: 8px; border-radius: 100px; background: #D1D5DB; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); cursor: pointer; border: none; padding: 0; }
+.slide-dot:hover { background: var(--ink-faint); }
+.slide-dot.active { width: 22px; background: var(--blue); }
+.slide-arrows { display: flex; gap: 0.5rem; }
+.slide-arrow { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); background: var(--white); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; color: var(--ink-soft); transition: all 0.2s ease; user-select: none; }
+.slide-arrow:hover:not(:disabled) { border-color: var(--blue); color: var(--white); background: var(--blue); transform: scale(1.05); }
+.slide-arrow:disabled { opacity: 0.4; cursor: default; pointer-events: none; background: var(--white); border-color: var(--line); color: var(--ink-faint); }
+
+/* EXPERIENCE */
+.experience { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.timeline { position: relative; padding-left: 2.5rem; margin-top: 1rem; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--line); border-radius: 2px; }
+.tl-item { position: relative; padding-bottom: 3.5rem; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before { content: ''; position: absolute; left: -2.9rem; top: 1.8rem; width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 3px solid var(--blue); box-shadow: 0 0 0 6px var(--paper); z-index: 1; transition: background 0.3s, transform 0.3s; }
+.tl-item:hover::before { background: var(--blue); transform: scale(1.2); }
+.tl-content { background: var(--white); border: 1px solid var(--line); padding: 2rem 2.5rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(27,35,51,0.03); transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s, border-color 0.3s; }
+.tl-content:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(30,79,160,0.08); border-color: var(--blue); }
+.tl-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem; }
+.tl-title-wrap { display: flex; flex-direction: column; gap: 0.3rem; }
+.tl-role { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.tl-org { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-deep); background: var(--yellow-soft); padding: 0.25rem 0.8rem; border-radius: 100px; align-self: flex-start; }
+.tl-date { font-size: 0.8rem; color: var(--ink-soft); font-weight: 600; background: var(--paper); padding: 0.3rem 0.85rem; border-radius: 100px; border: 1px solid var(--line); }
+.tl-desc { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.75; }
+.tl-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1rem; }
+.tl-tag { font-size: 0.72rem; font-weight: 600; color: var(--ink-soft); border: 1px solid var(--line); padding: 0.2rem 0.75rem; border-radius: 6px; }
+
+/* RESEARCH */
+.research { background: var(--white); }
+.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3.5rem; }
+.research-card { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.cert-frame { width: 100%; aspect-ratio: 4/3; background: var(--yellow-soft); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; position: relative; }
+.cert-frame::before { content: ''; position: absolute; inset: 14px; border: 1px dashed var(--yellow); border-radius: 8px; }
+.cert-frame-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-deep); position: relative; z-index: 0; background: var(--white); padding: 0.35rem 0.8rem; border-radius: 100px; }
+.cert-frame img.loaded ~ .cert-frame-label { display: none; }
+.research-body { padding: 1.6rem; }
+.research-venue { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.55rem; }
+.research-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.7rem; line-height: 1.4; }
+.research-card p { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.65; margin-bottom: 1.1rem; }
+.research-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 100px; }
+.badge-pub { background: #E6F4EA; color: #1E7B3F; }
+.badge-conf { background: #E8F0FC; color: var(--blue-deep); }
+
+/* Hackathons */
+.hackathon-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.hackathon-card { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 22px rgba(27,35,51,0.05); transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s; }
+.hackathon-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(30,79,160,0.08); border-color: var(--blue); }
+.hackathon-img { width: 100%; aspect-ratio: 16/9; background: var(--yellow-soft); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.hackathon-img-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-deep); background: var(--white); padding: 0.35rem 0.8rem; border: 1px dashed var(--yellow); border-radius: 100px; position: relative; z-index: 1; }
+.hackathon-img img.loaded ~ .hackathon-img-label { display: none; }
+.hackathon-rank { position: absolute; top: 0.85rem; left: 0.85rem; font-family: 'Fraunces', Georgia, serif; font-size: 0.95rem; font-weight: 700; color: var(--blue-deep); background: var(--white); border: 1px solid var(--line); padding: 0.3rem 0.85rem; border-radius: 100px; z-index: 2; }
+.hackathon-body { padding: 1.5rem 1.6rem; }
+.hackathon-meta { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
+.hackathon-card h4 { font-family: 'Fraunces', Georgia, serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.6rem; }
+.hackathon-card p { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 1rem; }
+.hackathon-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.hackathon-tag { font-size: 0.68rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 100px; background: var(--yellow-soft); color: var(--blue-deep); }
+.hackathon-link { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--blue); text-decoration: none; padding-top: 0.5rem; border-top: 1px solid var(--line); width: 100%; }
+.hackathon-link:hover { color: var(--blue-deep); }
+
+/* PATENT */
+.patent { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.patent-card { background: var(--white); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.patent-head { padding: 1.75rem 2rem; border-bottom: 1px solid var(--line); display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.patent-status { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-deep); background: var(--yellow-soft); border: 1px solid var(--yellow); padding: 0.35rem 0.9rem; border-radius: 100px; margin-bottom: 0.9rem; }
+.patent-status::before { content: ''; display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); }
+.patent-head h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); line-height: 1.35; max-width: 560px; }
+.patent-meta-grid { display: grid; grid-template-columns: repeat(3, auto); gap: 1.5rem; text-align: right; }
+.patent-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.patent-meta-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+.patent-meta-value { font-family: 'Fraunces', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--blue); }
+.patent-body { padding: 2rem; display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; }
+.patent-abstract-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.7rem; }
+.patent-abstract p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 1rem; }
+.patent-inventors { margin-top: 1.5rem; }
+.patent-inventors-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.7rem; }
+.inventor-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.inventor-chip { font-size: 0.78rem; font-weight: 600; padding: 0.35rem 0.85rem; border-radius: 100px; color: var(--blue-deep); background: var(--yellow-soft); border: 1px solid var(--yellow); }
+.inventor-chip.self { color: var(--white); background: var(--blue); border-color: var(--blue); }
+.patent-figure { background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; }
+.patent-figure-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-deep); background: var(--white); border: 1px dashed var(--yellow); padding: 0.35rem 0.8rem; border-radius: 100px; position: relative; z-index: 1; }
+.patent-figure img.loaded ~ .patent-figure-label { display: none; }
+.patent-figure-caption { font-size: 0.75rem; color: var(--ink-faint); margin-top: 0.75rem; line-height: 1.5; }
+.patent-footer { border-top: 1px solid var(--line); padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--ink-faint); }
+.patent-footer strong { color: var(--ink); font-weight: 600; }
+
+/* CONTACT */
+.contact { background: var(--blue); padding: 5.5rem 0; }
+.contact .section-label { color: var(--yellow); }
+.contact .section-label::before { background: var(--yellow); }
+.contact .section-title { color: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-desc { font-size: 0.98rem; color: rgba(255,255,255,0.7); line-height: 1.75; }
+.contact-links { display: flex; flex-direction: column; gap: 0.85rem; }
+.contact-link { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; font-weight: 600; color: var(--white); text-decoration: none; padding: 1rem 1.25rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+.contact-link:hover { background: rgba(246,196,83,0.12); border-color: var(--yellow); transform: translateX(4px); }
+.contact-link-icon { width: 36px; height: 36px; background: var(--yellow); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em; color: var(--blue-deep); flex-shrink: 0; font-family: 'Fraunces', Georgia, serif; }
+
+/* FLOATING LINKEDIN BUTTON */
+.fab-linkedin {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;
+  background: #0A66C2; color: #ffffff; text-decoration: none;
+  padding: 0.85rem 1.4rem; border-radius: 100px; font-weight: 600; font-size: 0.9rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 8px 24px rgba(10, 102, 194, 0.35); 
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s, background 0.2s;
+}
+.fab-linkedin:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(10, 102, 194, 0.45); background: #004182; }
+.fab-linkedin svg { fill: currentColor; width: 18px; height: 18px; }
+
+/* FOOTER */
+footer { background: var(--white); padding: 1.75rem 2rem; text-align: center; font-size: 0.8rem; color: var(--ink-faint); border-top: 1px solid var(--line); }
+
+/* FADE IN */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { 
+  .fade-in { opacity: 1; transform: none; transition: none; }
+  .ticket { animation: none; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-sidebar { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .research-grid { grid-template-columns: 1fr; }
+  .hackathon-row { grid-template-columns: 1fr; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-tickets { height: 280px; max-width: 480px; margin: 2rem auto 0; }
+  .patent-head { flex-direction: column; }
+  .patent-meta-grid { grid-template-columns: repeat(3, 1fr); text-align: left; width: 100%; gap: 1rem; }
+  .patent-body { grid-template-columns: 1fr; }
+  .fab-linkedin { bottom: 1.5rem; right: 1.5rem; padding: 0.75rem 1.2rem; }
+}
+@media (max-width: 600px) {
+  /* Mobile Navigation Styles */
+  .nav-mobile-toggle { display: block; }
+  .nav-links {
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
+    flex-direction: column; gap: 0; padding: 0.5rem 0;
+    border-bottom: 1px solid var(--line); box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    /* Hidden state */
+    transform: translateY(-10px); opacity: 0; pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); z-index: 100;
+  }
+  .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-links a { display: block; padding: 1.25rem 2.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--line); }
+  .nav-links li:last-child a { border-bottom: none; }
+  .nav-cta { display: none; /* Hide standard CTA in mobile top bar to save space, but you could optionally move it inside .nav-links */ }
+  
+  .projects-grid { grid-template-columns: 1fr; }
+  .about-sidebar { grid-template-columns: 1fr; }
+  .sidebar-item:nth-child(n) { grid-column: span 1; }
+  .hero-tickets { height: 260px; }
+  .ticket { width: 150px; padding: 0.9rem 1rem; }
+  .ticket-1 { right: 0; }
+  .ticket-2 { top: 100px; }
+  .ticket-3 { top: 200px; right: 0; }
+  .patent-meta-grid { grid-template-columns: 1fr 1fr; }
+  
+  .timeline { padding-left: 1.5rem; }
+  .tl-item::before { left: -1.9rem; top: 1.5rem; width: 12px; height: 12px; box-shadow: 0 0 0 4px var(--paper); }
+  .tl-content { padding: 1.5rem; }
+  .tl-header { flex-direction: column; gap: 0.8rem; }
+  
+  .fab-linkedin span { display: none; }
+  .fab-linkedin { padding: 1rem; border-radius: 50%; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo" aria-label="Aakash Darda Homepage">Aakash <span>Darda</span></a>
+  <button class="nav-mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#patent">Patent</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:aakashdarda777@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-inner fade-in">
+        <div class="hero-tag">Open to Internships &amp; Collaboration</div>
+        <h1>Building real products,<br><em>not just assignments.</em></h1>
+        <p class="hero-sub">CSAI student at VIT Pune, department topper, founder of StudyPalz, published researcher, and freelance Django developer. I turn ideas into working software used by real people.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="https://www.linkedin.com/in/aakashdarda-20059334a" target="_blank" class="btn-secondary">Message on LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-tickets fade-in">
+        <div class="ticket ticket-1">
+          <div class="ticket-num">1,300+</div>
+          <div class="ticket-label">StudyPalz active users</div>
+        </div>
+        <div class="ticket ticket-2">
+          <div class="ticket-num">8+ Projects</div>
+          <div class="ticket-label">Personal and freelance</div>
+        </div>
+        <div class="ticket ticket-3">
+          <div class="ticket-num">2 papers</div>
+          <div class="ticket-label">Published &amp; presented at IEEE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Developer, founder, and problem solver.</h2>
+        <p>I am a 3rd-year Computer Science and AI student at VIT Pune, currently department topper with a 9.62 CGPA. My real education happens outside the classroom — building products that solve actual problems for real users.</p>
+        <p>I founded StudyPalz, a learning platform now used by 1,300+ engineering students, published academic research on it, and presented at an IEEE international conference. Alongside academics, I take freelance Django projects for clients with genuine business requirements.</p>
+        <p>My stack is Python and Django on the backend, with a strong eye for clean frontend design. Currently deepening expertise in DSA with C++ and expanding into the MERN stack.</p>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">Django</span><span class="chip">C++</span>
+          <span class="chip">JavaScript</span><span class="chip">HTML / CSS</span><span class="chip">SQLite</span>
+          <span class="chip">Machine Learning</span><span class="chip">Bootstrap 5</span>
+          <span class="chip">Chart.js</span><span class="chip">Git &amp; GitHub</span><span class="chip">Openpyxl</span>
+        </div>
+      </div>
+      <div class="about-sidebar fade-in">
+        <div class="sidebar-item">
+          <strong>VIT Pune &mdash; CSAI (2024&ndash;2028)</strong>
+          <span>Department Topper &middot; 9.62 CGPA &middot; 3rd Year</span>
+        </div>
+        <div class="sidebar-item">
+          <strong>Academic Record</strong>
+          <span>&middot; 97% in 10th ICSE <br>&middot; 82.2% in 12th CBSE<br>&middot; JEE 95.2 %ile <br> &middot; MHTCET 97.1 %ile</span>
+        </div>
+        <div class="sidebar-item accent">
+          <strong>Hackathons</strong>
+          <span>Top 20 / 250+ &mdash; InnoHack 2.0<br>Top 40 / 250+ &mdash; Coderverse 2025</span>
+        </div>
+        <div class="sidebar-item">
+          <strong>Research &amp; Conferences</strong>
+          <span>Published in IJPE (Totem Publisher)<br>Presented at IEEE TQCEBT&rsquo;26</span>
+        </div>
+        <div class="sidebar-item">
+          <strong>Interests</strong>
+          <span>Teaching &amp; mentoring, frontend design, adaptive systems, product thinking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">Things I have built and shipped.</h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card featured fade-in" data-card>
+        <div class="card-viewport">
+          <div class="card-track">
+            <div class="card-slide slide-1" tabindex="0">
+              <div class="project-img">
+                <img src="studypalz.png" alt="StudyPalz screenshot" loading="lazy">
+                <div class="img-placeholder">
+                  <div class="project-img-label">studypalz.png</div>
+                  <div class="project-img-url">studypalz3.pythonanywhere.com</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-type">Flagship Product <span class="featured-pill">Live</span></div>
+                <h3>StudyPalz 3</h3>
+                <p>Syllabus-focused learning platform providing structured notes for VIT Pune students. Currently managing 5 academic departments with 1,300+ active students, plus a companion YouTube channel with 10k+ views.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">Django</span><span class="tag">ML</span><span class="tag">Python</span>
+                  </div>
+                  <a href="https://studypalz3.pythonanywhere.com/" target="_blank" class="project-link" aria-label="Visit StudyPalz">Visit →</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">What it does</div>
+              <h4>Three versions, one mission</h4>
+              <p>StudyPalz has evolved across three distinct versions, each with a different purpose:</p>
+              <ul class="feature-list">
+                <li><strong>StudyPalz v1 (Research Edition)</strong> — The original platform on which the IJPE paper was published. Focused on personalized learning paths and achieved 66%+ measurable learning improvement in a field study.</li>
+                <li><strong>StudyPalz v2 (Hackathon Edition)</strong> — Built for InnoHack 2.0. Converts raw PDFs into auto-generated notes, podcasts, and spaced-repetition quizzes. Placed Top 20 of 250+ teams.</li>
+                <li><strong>StudyPalz v3 (Current Live Platform)</strong> — The production application for VIT Pune. Curates micro-learning and provides structured exam notes across 5 departments for 1,300+ students, supported by an educational YouTube channel (230+ subs, 10k+ views).</li>
+              </ul>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">How it is built</div>
+              <h4>Full tech stack</h4>
+              <div class="stack-section">
+                <div class="stack-label">Backend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Python 3</span><span class="stack-chip">Django MVT</span><span class="stack-chip">SQLite</span><span class="stack-chip">Django ORM</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Frontend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">HTML5</span><span class="stack-chip">CSS3</span><span class="stack-chip">JavaScript</span><span class="stack-chip">Bootstrap 5</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">AI / ML</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Adaptive Analytics</span><span class="stack-chip">Spaced Repetition</span><span class="stack-chip">Generative AI (v2)</span><span class="stack-chip">Forgetting Curve Model</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Infrastructure</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">PythonAnywhere</span><span class="stack-chip">Git / GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-nav">
+          <div class="slide-dots" role="tablist">
+            <button class="slide-dot active" data-dot="0" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+            <button class="slide-dot" data-dot="1" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+            <button class="slide-dot" data-dot="2" role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+          </div>
+          <div class="slide-arrows">
+            <button class="slide-arrow" data-dir="-1" aria-label="Previous slide" disabled>&#8592;</button>
+            <button class="slide-arrow" data-dir="1" aria-label="Next slide">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-card>
+        <div class="card-viewport">
+          <div class="card-track">
+            <div class="card-slide slide-1" tabindex="0">
+              <div class="project-img">
+                <img src="lendpalz.png" alt="LendPalz screenshot" loading="lazy">
+                <div class="img-placeholder">
+                  <div class="project-img-label">lendpalz.png</div>
+                  <div class="project-img-url">lendpalz.pythonanywhere.com</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-type">Freelance &mdash; Fintech</div>
+                <h3>LendPalz</h3>
+                <p>Command-center dashboard for independent lenders. Automated EMI scheduling, overdue identification, WhatsApp borrower communication, loan top-up logic, and one-click Excel exports.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">Django</span><span class="tag">SQLite</span><span class="tag">Openpyxl</span>
+                  </div>
+                  <a href="https://lendpalz.pythonanywhere.com/" target="_blank" class="project-link" aria-label="Visit LendPalz">Visit →</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">What it does</div>
+              <h4>A command center for independent lenders</h4>
+              <p>Most small-scale lenders rely on manual ledgers or scattered spreadsheets. LendPalz replaces that entirely — reducing the lender's mental load and making debt recovery workflows dramatically faster.</p>
+              <ul class="feature-list">
+                <li>Automated EMI schedule generation with real-time interest calculation across multiple loan types</li>
+                <li>Instant overdue identification from the dashboard — no manual checking required</li>
+                <li>Direct WhatsApp reminders to borrowers with one click, reducing follow-up friction</li>
+                <li>Loan top-up system that merges old outstanding balances into new contracts seamlessly</li>
+                <li>Daily summaries and Excel report exports formatted for accountants</li>
+                <li>Multi-borrower tracking: manage multiple loans per borrower without confusion</li>
+              </ul>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">How it is built</div>
+              <h4>Full tech stack</h4>
+              <div class="stack-section">
+                <div class="stack-label">Backend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Python 3</span><span class="stack-chip">Django MVT</span><span class="stack-chip">SQLite</span><span class="stack-chip">Django ORM</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Frontend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">HTML5</span><span class="stack-chip">CSS3</span><span class="stack-chip">Bootstrap 5</span><span class="stack-chip">JavaScript</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Key Libraries</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Openpyxl</span><span class="stack-chip">WhatsApp API (wa.me)</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Infrastructure</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">PythonAnywhere</span><span class="stack-chip">Git / GitHub</span>
+                </div>
+              </div>
+              <p style="font-size:0.78rem; color:var(--ink-faint); margin-top:0.5rem;">Key engineering challenge: ensuring every rupee is accurately tracked across top-ups, partial payments, and interest compounding — data integrity above all else.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-nav">
+          <div class="slide-dots" role="tablist">
+            <button class="slide-dot active" data-dot="0" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+            <button class="slide-dot" data-dot="1" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+            <button class="slide-dot" data-dot="2" role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+          </div>
+          <div class="slide-arrows">
+            <button class="slide-arrow" data-dir="-1" aria-label="Previous slide" disabled>&#8592;</button>
+            <button class="slide-arrow" data-dir="1" aria-label="Next slide">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-card>
+        <div class="card-viewport">
+          <div class="card-track">
+            <div class="card-slide slide-1" tabindex="0">
+              <div class="project-img">
+                <img src="materialpalz.png" alt="MaterialPalz screenshot" loading="lazy">
+                <div class="img-placeholder">
+                  <div class="project-img-label">materialpalz.png</div>
+                  <div class="project-img-url">materialpalz2.pythonanywhere.com</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-type">Freelance &mdash; Construction ERP</div>
+                <h3>MaterialPalz</h3>
+                <p>Full construction ERP for a real client firm. Real-time inventory tracking, labor DPR, vendor ledgers, measurement book, and owner-level financial dashboards across all active sites.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">Django</span><span class="tag">Chart.js</span><span class="tag">RBAC</span>
+                  </div>
+                  <a href="https://materialpalz2.pythonanywhere.com/" target="_blank" class="project-link" aria-label="Visit MaterialPalz">Visit →</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">What it does</div>
+              <h4>Eliminates chaos across construction sites</h4>
+              <p>Stops material theft and over-billing by tracking every bag of cement and every hour of labor. Gives site owners real-time financial visibility without requiring physical site visits.</p>
+              <ul class="feature-list">
+                <li>Owner super-dashboard with doughnut charts showing total spend vs. material/labor split across all sites</li>
+                <li>Smart inventory with live stock levels, challan photo proof for every material entry, and in/out logic</li>
+                <li>Daily Progress Report (DPR) tracking skilled vs. unskilled workers per contractor with weather and site notes</li>
+                <li>Vendor hub with automated debit/credit ledgers, debt alerts, and full transaction history</li>
+                <li>Measurement Book (MB) for recording work dimensions and auto-calculating quantities and billing amounts</li>
+                <li>One-click Excel export of material, labor, vendor, and expense sheets — formatted for accountants and CAs</li>
+              </ul>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">How it is built</div>
+              <h4>Full tech stack</h4>
+              <div class="stack-section">
+                <div class="stack-label">Backend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Python 3</span><span class="stack-chip">Django MVT</span><span class="stack-chip">SQLite</span><span class="stack-chip">Django Auth</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Frontend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">HTML5</span><span class="stack-chip">Custom CSS3</span><span class="stack-chip">Chart.js</span><span class="stack-chip">Bootstrap 5</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Architecture</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">RBAC (Role-Based Access Control)</span><span class="stack-chip">Multi-site data model</span><span class="stack-chip">File upload for challans</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Infrastructure</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">PythonAnywhere</span><span class="stack-chip">Git / GitHub</span><span class="stack-chip">Openpyxl</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-nav">
+          <div class="slide-dots" role="tablist">
+            <button class="slide-dot active" data-dot="0" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+            <button class="slide-dot" data-dot="1" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+            <button class="slide-dot" data-dot="2" role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+          </div>
+          <div class="slide-arrows">
+            <button class="slide-arrow" data-dir="-1" aria-label="Previous slide" disabled>&#8592;</button>
+            <button class="slide-arrow" data-dir="1" aria-label="Next slide">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-card>
+        <div class="card-viewport">
+          <div class="card-track">
+            <div class="card-slide slide-1" tabindex="0">
+              <div class="project-img">
+                <img src="wakepalz.png" alt="WakePalz screenshot" loading="lazy">
+                <div class="img-placeholder">
+                  <div class="project-img-label">wakepalz.png</div>
+                  <div class="project-img-url">wakepalz.pythonanywhere.com</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-type">Personal Project</div>
+                <h3>WakePalz</h3>
+                <p>A habit system built to fix my own sleep schedule. Tracks daily wake-up times, streaks, and trends. Helped shift my wake-up from 10 AM to 6 AM through small, visible, daily improvement.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">Django</span><span class="tag">SQLite</span>
+                  </div>
+                  <a href="https://wakepalz.pythonanywhere.com/" target="_blank" class="project-link" aria-label="Visit WakePalz">Visit →</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">What it does</div>
+              <h4>A system, not a motivation app</h4>
+              <p>Built after understanding the theory behind sleep timing but finding that understanding alone wasn't enough. The key insight: small, visible improvement is more powerful than big challenges.</p>
+              <ul class="feature-list">
+                <li>Daily wake-up time logging — the only input required to start the habit</li>
+                <li>Streak tracking to build consistency and make missing a day feel significant</li>
+                <li>Wake-up history and trend chart showing gradual shift over weeks</li>
+                <li>Social accountability feed — see other users' progress to stay consistent</li>
+                <li>No motivational quotes, no gamification gimmicks — just honest data and progress</li>
+              </ul>
+              <p>Personal result: shifted from waking at 10 AM to consistently waking at 6 AM by improving 10–20 minutes every few days.</p>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">How it is built</div>
+              <h4>Full tech stack</h4>
+              <div class="stack-section">
+                <div class="stack-label">Backend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Python 3</span><span class="stack-chip">Django MVT</span><span class="stack-chip">SQLite</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Frontend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">HTML5</span><span class="stack-chip">CSS3</span><span class="stack-chip">JavaScript</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Features</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Streak logic</span><span class="stack-chip">Progress charts</span><span class="stack-chip">Social feed</span><span class="stack-chip">User auth</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Infrastructure</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">PythonAnywhere</span><span class="stack-chip">Git / GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-nav">
+          <div class="slide-dots" role="tablist">
+            <button class="slide-dot active" data-dot="0" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+            <button class="slide-dot" data-dot="1" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+            <button class="slide-dot" data-dot="2" role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+          </div>
+          <div class="slide-arrows">
+            <button class="slide-arrow" data-dir="-1" aria-label="Previous slide" disabled>&#8592;</button>
+            <button class="slide-arrow" data-dir="1" aria-label="Next slide">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-card>
+        <div class="card-viewport">
+          <div class="card-track">
+            <div class="card-slide slide-1" tabindex="0">
+              <div class="project-img">
+                <img src="eatpalz.png" alt="EatPalz screenshot" loading="lazy">
+                <div class="img-placeholder">
+                  <div class="project-img-label">eatpalz.png</div>
+                  <div class="project-img-url">eatpalz.pythonanywhere.com</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-type">Personal Project</div>
+                <h3>EatPalz</h3>
+                <p>Smart food ordering platform for college canteens. Reduces wait times with scheduled deliveries, supports group orders with discounts, and gives canteen owners demand-based insights.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">Django</span><span class="tag">Python</span>
+                  </div>
+                  <a href="http://eatpalz.pythonanywhere.com/" target="_blank" class="project-link" aria-label="Visit EatPalz">Visit →</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">What it does</div>
+              <h4>From canteen chaos to campus convenience</h4>
+              <p>Designed to solve the real problem of long queues and wasted meal breaks at college. Students can order from class, schedule delivery to any campus location, and even coordinate group orders.</p>
+              <ul class="feature-list">
+                <li>Pre-scheduled food ordering — place orders in advance to avoid peak-time queues</li>
+                <li>Campus delivery to any location: classrooms, labs, or open areas</li>
+                <li>Group order system with automatic discount calculation for bulk orders</li>
+                <li>Canteen owner dashboard with real-time incoming order management</li>
+                <li>Demand analytics for owners — identify peak hours and popular items</li>
+                <li>Order history and reorder shortcuts for regular customers</li>
+              </ul>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">How it is built</div>
+              <h4>Full tech stack</h4>
+              <div class="stack-section">
+                <div class="stack-label">Backend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Python 3</span><span class="stack-chip">Django MVT</span><span class="stack-chip">SQLite</span><span class="stack-chip">Django ORM</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Frontend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">HTML5</span><span class="stack-chip">CSS3</span><span class="stack-chip">JavaScript</span><span class="stack-chip">Bootstrap 5</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Key Features (Engineered)</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Scheduled order queue</span><span class="stack-chip">Group order logic</span><span class="stack-chip">Dual-role auth (student / owner)</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Infrastructure</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">PythonAnywhere</span><span class="stack-chip">Git / GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-nav">
+          <div class="slide-dots" role="tablist">
+            <button class="slide-dot active" data-dot="0" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+            <button class="slide-dot" data-dot="1" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+            <button class="slide-dot" data-dot="2" role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+          </div>
+          <div class="slide-arrows">
+            <button class="slide-arrow" data-dir="-1" aria-label="Previous slide" disabled>&#8592;</button>
+            <button class="slide-arrow" data-dir="1" aria-label="Next slide">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" data-card>
+        <div class="card-viewport">
+          <div class="card-track">
+            <div class="card-slide slide-1" tabindex="0">
+              <div class="project-img">
+                <img src="envirogreen.png" alt="EnviroGreen screenshot" loading="lazy">
+                <div class="img-placeholder">
+                  <div class="project-img-label">envirogreen.png</div>
+                  <div class="project-img-url">envirogreen.pythonanywhere.com</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-type">Freelance &mdash; Sustainability</div>
+                <h3>EnviroGreen</h3>
+                <p>First freelance project. Full-stack platform for garden waste management with doorstep collection scheduling, recycling solutions for multiple waste categories, and a user reward system.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">Django</span><span class="tag">HTML/CSS</span><span class="tag">JS</span>
+                  </div>
+                  <a href="https://envirogreen.pythonanywhere.com/" target="_blank" class="project-link" aria-label="Visit EnviroGreen">Visit →</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">What it does</div>
+              <h4>Doorstep sustainability, rewarded</h4>
+              <p>Built for a client promoting sustainable garden waste disposal. The platform makes eco-friendly practices the path of least resistance by bringing collection to the user's door and rewarding participation.</p>
+              <ul class="feature-list">
+                <li>Doorstep garden waste collection scheduling — book a pickup slot directly from the platform</li>
+                <li>Separate recycling solutions for green waste, paper and plastic, and coconut disposal</li>
+                <li>Reward system that accumulates points for every responsible disposal action</li>
+                <li>Clean, intuitive interface designed for broad accessibility including non-technical users</li>
+                <li>Admin panel for the client to manage collection schedules and user data</li>
+              </ul>
+              <p>This was the first client project — where I learned the real difference between building for yourself and delivering for someone else's business.</p>
+            </div>
+            <div class="card-slide detail-slide" tabindex="0">
+              <div class="slide-heading">How it is built</div>
+              <h4>Full tech stack</h4>
+              <div class="stack-section">
+                <div class="stack-label">Backend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Python 3</span><span class="stack-chip">Django MVT</span><span class="stack-chip">SQLite</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Frontend</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">HTML5</span><span class="stack-chip">CSS3</span><span class="stack-chip">JavaScript</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Key Features (Engineered)</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">Booking / scheduling system</span><span class="stack-chip">Points reward engine</span><span class="stack-chip">Multi-waste-type categorization</span>
+                </div>
+              </div>
+              <div class="stack-section">
+                <div class="stack-label">Infrastructure</div>
+                <div class="stack-grid">
+                  <span class="stack-chip">PythonAnywhere</span><span class="stack-chip">Git / GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-nav">
+          <div class="slide-dots" role="tablist">
+            <button class="slide-dot active" data-dot="0" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+            <button class="slide-dot" data-dot="1" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+            <button class="slide-dot" data-dot="2" role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+          </div>
+          <div class="slide-arrows">
+            <button class="slide-arrow" data-dir="-1" aria-label="Previous slide" disabled>&#8592;</button>
+            <button class="slide-arrow" data-dir="1" aria-label="Next slide">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">Where I have led and built.</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item fade-in">
+        <div class="tl-content">
+          <div class="tl-header">
+            <div class="tl-title-wrap">
+              <div class="tl-role">Founder &amp; CSAI Head</div>
+              <div class="tl-org">StudyPalz 3</div>
+            </div>
+            <div class="tl-date">Sep 2025 &ndash; Present</div>
+          </div>
+          <div class="tl-desc">Founded and built StudyPalz from the ground up, evolving it into a comprehensive learning platform specifically providing exam preparation notes for VIT Pune students. Currently managing operations across 5 distinct academic departments, serving over 1,300+ active students. Simultaneously built an educational companion YouTube channel that has organically reached 10k+ views and 230+ subscribers. Lead product direction, full-stack development, and multi-department team coordination.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Product Leadership</span>
+            <span class="tl-tag">Full-Stack Development</span>
+            <span class="tl-tag">Community Building</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item fade-in">
+        <div class="tl-content">
+          <div class="tl-header">
+            <div class="tl-title-wrap">
+              <div class="tl-role">Freelance Full-Stack Developer</div>
+              <div class="tl-org">Independent &mdash; Django / Python</div>
+            </div>
+            <div class="tl-date">2024 &ndash; Present</div>
+          </div>
+          <div class="tl-desc">Delivered three client projects end-to-end: EnviroGreen (sustainability platform), MaterialPalz (construction ERP with RBAC, inventory management, vendor ledgers, and financial reporting), and LendPalz (fintech lending platform with automated EMI scheduling, overdue tracking, and WhatsApp communication). Each project involved requirements gathering, solo development, and live deployment.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Client Management</span>
+            <span class="tl-tag">System Architecture</span>
+            <span class="tl-tag">Django ORM</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item fade-in">
+        <div class="tl-content">
+          <div class="tl-header">
+            <div class="tl-title-wrap">
+              <div class="tl-role">B.Tech &mdash; Computer Science &amp; AI</div>
+              <div class="tl-org">Vishwakarma Institute of Technology, Pune</div>
+            </div>
+            <div class="tl-date">2024 &ndash; Present</div>
+          </div>
+          <div class="tl-desc">Currently in 3rd year. Department topper with 9.62 CGPA at the end of 2nd year. Actively building real-world projects alongside academics, competing in national-level hackathons, and conducting published research simultaneously.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">9.62 CGPA</span>
+            <span class="tl-tag">Data Structures</span>
+            <span class="tl-tag">Machine Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="research" id="research">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Research</div>
+      <h2 class="section-title">Published work &amp; conference presentations.</h2>
+    </div>
+    <div class="research-grid">
+      <div class="research-card fade-in">
+        <div class="cert-frame">
+          <img src="studypalz-paper.png" alt="StudyPalz IJPE publication certificate" loading="lazy">
+          <div class="cert-frame-label">studypalz-paper.png</div>
+        </div>
+        <div class="research-body">
+          <div class="research-venue">IJPE &mdash; Totem Publisher</div>
+          <h3>StudyPalz: A Personalized Academic Learning Path Recommendation System</h3>
+          <p>Peer-reviewed journal publication on the AI-driven adaptive learning system. Field study demonstrated a 66%+ measurable improvement in student learning outcomes. Co-authored with teammates under the mentorship of Prof. Avadhoot Rajurkar.</p>
+          <span class="research-badge badge-pub">Published</span>
+        </div>
+      </div>
+      <div class="research-card fade-in">
+        <div class="cert-frame">
+          <img src="codepalz-ieee.png" alt="CodePalz IEEE TQCEBT presentation certificate" loading="lazy">
+          <div class="cert-frame-label">codepalz-ieee.png</div>
+        </div>
+        <div class="research-body">
+          <div class="research-venue">IEEE TQCEBT&rsquo;26 &mdash; International Conference</div>
+          <h3>CodePalz: GenAI Powered Adaptive AI Learning</h3>
+          <p>Presented at the 3rd International IEEE Conference on Trends in Quantum Computing and Emerging Business Technologies. Focuses on leveraging Generative AI to build adaptive, personalized coding education experiences at scale.</p>
+          <span class="research-badge badge-conf">Presented at IEEE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="fade-in" style="margin-bottom: 1.5rem;">
+      <div class="section-label">Hackathons</div>
+      <h3 style="font-family:'Fraunces',Georgia,serif; font-size:1.5rem; font-weight:700; color:var(--ink); margin-bottom:3rem;">Competing under pressure.</h3>
+    </div>
+    <div class="hackathon-row">
+      <div class="hackathon-card fade-in">
+        <div class="hackathon-img">
+          <img src="innohack.png" alt="StudyPalz at InnoHack 2.0" loading="lazy">
+          <div class="hackathon-img-label">innohack.png</div>
+          <div class="hackathon-rank">Top 20 / 250+</div>
+        </div>
+        <div class="hackathon-body">
+          <div class="hackathon-meta">InnoHack 2.0 &middot; Solo Build</div>
+          <h4>StudyPalz 2 &mdash; AI Learning Ecosystem</h4>
+          <p>Built an intelligent system that converts raw study material into a personalized learning ecosystem: auto-generated notes, podcasts, adaptive quizzes, and a smart schedule that re-plans itself if you miss a day. Modeled memory retention on the forgetting curve to optimize review timing, and added an Exam Power Pack generating a 24-hour deep-dive kit targeting weak spots before a test.</p>
+          <div class="hackathon-tags">
+            <span class="hackathon-tag">AI Tutor</span>
+            <span class="hackathon-tag">Spaced Repetition</span>
+            <span class="hackathon-tag">Auto-Generated Notes</span>
+            <span class="hackathon-tag">Mastery Analytics</span>
+          </div>
+          <a href="http://studypalz2.pythonanywhere.com/home" target="_blank" class="hackathon-link">Visit StudyPalz 2 &rarr;</a>
+        </div>
+      </div>
+      <div class="hackathon-card fade-in">
+        <div class="hackathon-img">
+          <img src="coderverse.png" alt="TravelPalz at Coderverse Hackathon 2025" loading="lazy">
+          <div class="hackathon-img-label">coderverse.png</div>
+          <div class="hackathon-rank">Top 40 / 250+</div>
+        </div>
+        <div class="hackathon-body">
+          <div class="hackathon-meta">Coderverse Hackathon 2025 &middot; with Divija Shah</div>
+          <h4>TravelPalz &mdash; Social AI Trip Planner</h4>
+          <p>Built in 24 hours to fix the chaos of group trip planning. TravelPalz generates day-wise itineraries from a destination, duration, and interests, then keeps them live — adapting to ratings, weather changes, and local closures automatically. A conversational AI chatbot lets users plan or modify trips naturally, with social sharing, safety contacts, and gamified badges built in.</p>
+          <div class="hackathon-tags">
+            <span class="hackathon-tag">AI Itinerary</span>
+            <span class="hackathon-tag">Live Re-Planning</span>
+            <span class="hackathon-tag">Chatbot UI</span>
+            <span class="hackathon-tag">Social Feed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="patent" id="patent">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Patent</div>
+      <h2 class="section-title">Filed and pending grant.</h2>
+    </div>
+    <div class="patent-card fade-in">
+      <div class="patent-head">
+        <div>
+          <div class="patent-status">Application Filed &middot; CIPC South Africa</div>
+          <h3>A Multi-Model Understanding and Quality Based Assessment System for Programming Education</h3>
+        </div>
+        <div class="patent-meta-grid">
+          <div class="patent-meta-item">
+            <span class="patent-meta-label">Application No.</span>
+            <span class="patent-meta-value">2026/05471</span>
+          </div>
+          <div class="patent-meta-item">
+            <span class="patent-meta-label">Filed</span>
+            <span class="patent-meta-value">21 May 2026</span>
+          </div>
+          <div class="patent-meta-item">
+            <span class="patent-meta-label">Classification</span>
+            <span class="patent-meta-value">G09B</span>
+          </div>
+        </div>
+      </div>
+      <div class="patent-body">
+        <div>
+          <div class="patent-abstract-label">Abstract</div>
+          <div class="patent-abstract">
+            <p>Learning programming algorithms is hard for beginners because of the gap between theory and implementation, and most existing tools overload students with features that distract from the actual learning goal. This filing introduces MMUQ (Multi-Model Understanding and Quality), an assessment model built around a simpler idea: give students relevant practice problems to build a base, hands-on hints instead of passive visualizations, and continuous feedback as they go.</p>
+            <p>The platform tests a student's actual code, scores their written explanations using generative AI, and surfaces an analytics dashboard tracking conceptual versus practical understanding over time &mdash; turning programming education into a feedback loop rather than a one-shot lecture.</p>
+          </div>
+          <div class="patent-inventors">
+            <div class="patent-inventors-label">Inventors</div>
+            <div class="inventor-list">
+              <span class="inventor-chip self">Aakash Darda</span>
+              <span class="inventor-chip">Sanika Pravin Akulwar</span>
+              <span class="inventor-chip">Angelina Anthony</span>
+              <span class="inventor-chip">Anvi Doshi</span>
+              <span class="inventor-chip">Dr. Nilesh Popat Sable</span>
+              <span class="inventor-chip">Dr. Parikshit N. Mahalle</span>
+              <span class="inventor-chip">Dr. Ganesh Shivaji Pise</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="patent-figure">
+            <img src="patent-diagram.png" alt="MMUQ assessment system flow diagram" loading="lazy">
+            <div class="patent-figure-label">patent-diagram.png</div>
+          </div>
+          <div class="patent-figure-caption">Fig. 1 &mdash; System flow from problem selection through MMUQ assessment to mastery scoring.</div>
+        </div>
+      </div>
+      <div class="patent-footer">
+        <span>Applicant: <strong>Vishwakarma Institute of Technology, Pune</strong></span>
+        <span>Status: <strong>Lodged, awaiting acceptance</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-in">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Let us build something.</h2>
+        <p class="contact-desc">Open to internships, freelance projects, research collaborations, and any interesting opportunity in web development or AI. I respond quickly and take every conversation seriously.</p>
+      </div>
+      <div class="contact-links fade-in">
+        <a href="mailto:aakashdarda777@gmail.com" class="contact-link">
+          <div class="contact-link-icon">@</div>
+          aakashdarda777@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/aakashdarda-20059334a" target="_blank" class="contact-link">
+          <div class="contact-link-icon">in</div>
+          linkedin.com/in/aakashdarda
+        </a>
+        <a href="https://github.com/aakashdarda2907" target="_blank" class="contact-link">
+          <div class="contact-link-icon">gh</div>
+          github.com/aakashdarda2907
+        </a>
+        <a href="https://studypalz3.pythonanywhere.com/" target="_blank" class="contact-link">
+          <div class="contact-link-icon">sp</div>
+          studypalz3.pythonanywhere.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Aakash Darda &nbsp;&middot;&nbsp; Pune, India &nbsp;&middot;&nbsp; Built with care
+</footer>
+
+<a href="https://www.linkedin.com/in/aakash-darda-20059334a/" target="_blank" class="fab-linkedin fade-in" aria-label="Message me on LinkedIn">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+  <span>Message on LinkedIn</span>
+</a>
+
+<script>
+// ── Mobile Menu Toggle ──
+const navToggle = document.querySelector('.nav-mobile-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+});
+
+// Close menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// ── Image load handling ──
+document.querySelectorAll('img').forEach(img => {
+  if (img.complete && img.naturalWidth > 0) {
+    img.classList.add('loaded');
+  } else {
+    img.addEventListener('load', () => img.classList.add('loaded'));
+  }
+});
+
+// ── Slideshow ──
+document.querySelectorAll('[data-card]').forEach(card => {
+  const track    = card.querySelector('.card-track');
+  const slides   = card.querySelectorAll('.card-slide');
+  const dots     = card.querySelectorAll('.slide-dot');
+  const arrows   = card.querySelectorAll('.slide-arrow');
+  let current    = 0;
+
+  track.style.width = (slides.length * 100) + '%';
+  slides.forEach(s => {
+    s.style.width = (100 / slides.length) + '%';
+  });
+
+  function goTo(n) {
+    current = Math.max(0, Math.min(n, slides.length - 1));
+    track.style.transform = `translateX(${-current * (100 / slides.length)}%)`;
+    slides[current].scrollTop = 0;
+    
+    // Update ARIA roles and dots
+    dots.forEach((d, i) => {
+      const isActive = i === current;
+      d.classList.toggle('active', isActive);
+      d.setAttribute('aria-selected', isActive);
+    });
+    
+    arrows[0].disabled = current === 0;
+    arrows[1].disabled = current === slides.length - 1;
+  }
+
+  arrows.forEach(btn => {
+    btn.addEventListener('click', () => goTo(current + parseInt(btn.dataset.dir)));
+  });
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => goTo(parseInt(dot.dataset.dot)));
+  });
+
+  goTo(0);
+});
+
+// ── Fade in on scroll ──
+// Use standard IntersectionObserver for smooth fade-ins as user scrolls
+const obsOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { 
+      e.target.classList.add('visible'); 
+      obs.unobserve(e.target); 
+    }
+  });
+}, obsOptions);
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
